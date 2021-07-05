@@ -18,7 +18,8 @@ public class ApplicationDto {
     private boolean archived;
     private String rejectReason;
 
-    public ApplicationDto(Long id, Long appNumber, LocalDateTime lastChangeDate, @NotBlank String name, @NotBlank String content, Status status, boolean archived, String rejectReason) {
+    public ApplicationDto(Long id, Long appNumber, LocalDateTime lastChangeDate, @NotBlank String name,
+                          @NotBlank String content, Status status, boolean archived, String rejectReason) {
         this.id = id;
         this.appNumber = appNumber;
         this.lastChangeDate = lastChangeDate;

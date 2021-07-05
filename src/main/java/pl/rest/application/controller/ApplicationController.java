@@ -81,8 +81,8 @@ public class ApplicationController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
 
-        return new ResponseEntity<>("Zmieniono status wniosku " + application.getAppNumber()
-                 + " na " + application.getStatus(), HttpStatus.OK);
+        return new ResponseEntity<>("Application " + application.getAppNumber()
+                 + " status has been changed to " + application.getStatus(), HttpStatus.OK);
     }
 
     @PutMapping(value = "/reject/{id}", produces = "application/json")
@@ -98,7 +98,7 @@ public class ApplicationController {
         }
 
         return new ResponseEntity<>("Application " + application.getAppNumber()
-                + " status has changed to " + application.getStatus() + ". Reject reason: " + application.getRejectReason(), HttpStatus.OK);
+                + " status has been changed to " + application.getStatus() + ". Reject reason: " + application.getRejectReason(), HttpStatus.OK);
     }
 
     @DeleteMapping (value = "/{id}", produces = "application/json")

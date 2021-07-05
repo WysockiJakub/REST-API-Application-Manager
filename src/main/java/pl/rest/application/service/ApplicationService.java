@@ -73,8 +73,7 @@ public class ApplicationService {
 
     public Page<ApplicationDto> getPageableListOfApplicationDto(Status state, String name, @NonNull Pageable page) {
 
-        //zwalidować enuma
-        Page<Application> applications = Page.empty();
+        Page<Application> applications;
         if (state != null && name != null) {
             applications = repository.findAllByNameAndStatus(name, state, page);
         } else if (state == null && name == null) {
@@ -92,7 +91,7 @@ public class ApplicationService {
 
     public Page<ApplicationDto> getPageableListOfApplicationDtoHistory(Long appNumber, Boolean isArchived, @NonNull Pageable page) {
 
-        Page<Application> applications = Page.empty();
+        Page<Application> applications;
         if (isArchived == null) {
             applications = repository.findAllByAppNumber(appNumber, page);
         } else if (!isArchived) {
