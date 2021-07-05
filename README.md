@@ -25,6 +25,8 @@ The project is used to manage applications(requests). The basic functions of the
       }`
 * Change application state: [PUT] http://localhost:8080/api/apps/change/9
 
+Application statuses: CREATED, VERIFIED, ACCEPTED, PUBLISHED, REJECTED
+
 ## Technologies
 Project is created with:
 * Java 1.8
